@@ -45,4 +45,4 @@ cache
 artifacts
 artifacts
 .scratch
-typechain-*
+.t

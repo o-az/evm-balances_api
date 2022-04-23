@@ -5,7 +5,7 @@ describe('Transactions', function () {
   it('Should transfer tokens between accounts', async function () {
     const [owner, addr1, addr2] = await ethers.getSigners()
 
-    const Token = await ethers.getContractFactory('BasicToken')
+    const Token = await ethers.getContractFactory('FakeTokenA')
 
     const hardhatToken = await Token.deploy(999999999)
 

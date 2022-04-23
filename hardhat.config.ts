@@ -1,26 +1,15 @@
 import '@typechain/hardhat'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
-import { extendEnvironment, HardhatUserConfig, task } from 'hardhat/config'
-
+import '@nomiclabs/hardhat-etherscan'
+import 'hardhat-gas-reporter'
 import 'tsconfig-paths/register'
-import { ethers } from 'ethers'
+import 'solidity-coverage'
+import { HardhatUserConfig } from 'hardhat/types'
+import { config as dotenvConfig } from 'dotenv'
+import { resolve } from 'path'
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-// task('accounts', 'Prints the list of accounts', async (args, hre) => {
-//   const accounts = await hre.ethers.getSigners()
-
-//   for await (const account of accounts) {
-//     console.log(account.address, await account.getBalance())
-//   }
-// })
-
-extendEnvironment(hre => {
-  return {
-    ethers,
-  }
-})
+dotenvConfig({ path: resolve(__dirname, './.env') })
 
 const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY
 const URL = `https://eth-ropsten.alchemyapi.io/v2/${ALCHEMY_API_KEY}`

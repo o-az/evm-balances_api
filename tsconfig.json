@@ -23,27 +23,12 @@
   "files": [
     "./hardhat.config.ts"
   ],
-  "include": [
-    "./src",
-    "./scripts",
-    "./test",
-    "./typechain-types"
-  ],
   "exclude": [
     "node_modules"
   ],
-  "ts-node": {
-    "swc": true,
-    "esm": true,
-    "transpileOnly": true,
-    "require": [
-      "tsconfig-paths/register"
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
-  }
+  "include": [
+    "src/**/*",
+    "tasks/**/*",
+    "test/**/*"
+  ]
 }
