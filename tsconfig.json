@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2018",
+    "module": "CommonJS",
+    "lib": [
+      "ES2018",
+      "DOM"
+    ],
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    },
+  },
+  "files": [
+    "./hardhat.config.ts"
+  ],
+  "include": [
+    "./src",
+    "./scripts",
+    "./test",
+    "./typechain-types"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "ts-node": {
+    "swc": true,
+    "esm": true,
+    "transpileOnly": true,
+    "require": [
+      "tsconfig-paths/register"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
+}
