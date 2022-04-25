@@ -46,3 +46,5 @@ artifacts
 artifacts
 .scratch
 .t
+.env.*
+!.env.example

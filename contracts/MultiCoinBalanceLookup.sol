@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 contract MultiCoinBalanceLookup {
   fallback() external payable {
@@ -17,38 +17,36 @@ contract MultiCoinBalanceLookup {
     uint8 decimals;
   }
 
-  string private _name = 'name()';
-  string private _symbol = 'symbol()';
-  string private _decimals = 'decimals()';
-  string private _balance = 'balanceOf(address)';
+  bytes4 private constant _balanceOf = bytes4(0x70a08231);
+  bytes4 private constant _name = bytes4(0x06fdde03);
+  bytes4 private constant _symbol = bytes4(0x95d89b41);
+  bytes4 private constant _decimals = bytes4(0x313ce567);
 
   function getBalances(address user, address[] calldata tokens) public view returns (Balance[] memory balances) {
     balances = new Balance[](tokens.length);
     for (uint256 idx = 0; idx < tokens.length; idx++) {
-      if (!isAContract(tokens[idx])) continue;
+      if (!isContract(tokens[idx])) continue;
       if (tokens[idx] != address(0x0)) {
-        balances[idx].balance = tokenBalance(user, tokens[idx]);
-        balances[idx].name = contractName(tokens[idx]);
-        balances[idx].symbol = contractSymbol(tokens[idx]);
-        balances[idx].decimals = contractDecimals(tokens[idx]);
+        balances[idx] = Balance({
+          balance: tokenBalance(user, tokens[idx]),
+          name: contractName(tokens[idx]),
+          symbol: contractSymbol(tokens[idx]),
+          decimals: contractDecimals(tokens[idx])
+        });
       } else {
-        balances[idx].balance = user.balance;
-        balances[idx].name = 'Ether';
-        balances[idx].symbol = 'ETH';
-        balances[idx].decimals = 18;
+        balances[idx] = Balance({ balance: user.balance, name: 'Ether', symbol: 'ETH', decimals: 18 });
       }
     }
     return balances;
   }
 
   /* Private functions */
-  function execTokenMethod(string storage method, address contractAddress)
+  function execTokenMethod(bytes4 method, address contractAddress)
     internal
     view
     returns (bool success, bytes memory result)
   {
-    bytes memory call = abi.encodeWithSignature(method, contractAddress);
-    return contractAddress.staticcall(call);
+    return contractAddress.staticcall(abi.encodeWithSelector(method, contractAddress));
   }
 
   function contractName(address contractAddress) internal view returns (string memory name) {
@@ -67,19 +65,14 @@ contract MultiCoinBalanceLookup {
   }
 
   function tokenBalance(address user, address contractAddress) internal view returns (uint256 balance) {
-    bytes memory call = abi.encodeWithSignature(_balance, user);
-    (bool success, bytes memory result) = contractAddress.staticcall(call);
+    (bool success, bytes memory result) = contractAddress.staticcall(abi.encodeWithSelector(_balanceOf, user));
     return success && result.length == 32 ? abi.decode(result, (uint256)) : 0;
   }
 
-  /**
-  CREDIT: https://github.com/DeltaBalances/DeltaBalances.github.io/blob/
-  77aafff42139d00d68c528180358d5990f6eac2d/smart_contract/contracts/deltabalances.sol#L219
-   */
-  function isAContract(address contractAddr) internal view returns (bool) {
+  function isContract(address contractAddress) internal view returns (bool) {
     uint256 codeSize;
     assembly {
-      codeSize := extcodesize(contractAddr)
+      codeSize := extcodesize(contractAddress)
     }
     return codeSize > 0;
   }
