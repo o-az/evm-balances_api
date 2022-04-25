@@ -22,22 +22,29 @@ contract MultiCoinBalanceLookup {
   bytes4 private constant _symbol = bytes4(0x95d89b41);
   bytes4 private constant _decimals = bytes4(0x313ce567);
 
+  // Multiple coins balance lookup
   function getBalances(address user, address[] calldata tokens) public view returns (Balance[] memory balances) {
     balances = new Balance[](tokens.length);
     for (uint256 idx = 0; idx < tokens.length; idx++) {
       if (!isContract(tokens[idx])) continue;
-      if (tokens[idx] != address(0x0)) {
-        balances[idx] = Balance({
-          balance: tokenBalance(user, tokens[idx]),
-          name: contractName(tokens[idx]),
-          symbol: contractSymbol(tokens[idx]),
-          decimals: contractDecimals(tokens[idx])
-        });
-      } else {
-        balances[idx] = Balance({ balance: user.balance, name: 'Ether', symbol: 'ETH', decimals: 18 });
-      }
+      balances[idx] = getBalance(user, tokens[idx]);
     }
     return balances;
+  }
+
+  // Single coin balance lookup
+  function getBalance(address user, address token) public view returns (Balance memory balance) {
+    if (token != address(0x0)) {
+      return
+        Balance({
+          balance: tokenBalance(user, token),
+          name: contractName(token),
+          symbol: contractSymbol(token),
+          decimals: contractDecimals(token)
+        });
+    } else {
+      return Balance({ balance: user.balance, name: 'Ether', symbol: 'ETH', decimals: 18 });
+    }
   }
 
   /* Private functions */
