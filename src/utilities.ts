@@ -6,4 +6,3 @@ export function hexToASCII(hex: string) {
   }
   return parts.join('').trim()
 }
-console.log(hexToASCII('0x313ce567ad'))
