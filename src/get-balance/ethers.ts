@@ -39,11 +39,11 @@ export async function getTokensBalances({
   address: string
   chain: Chain
   provider: Provider
-  tokens: string[]
+  tokens: string[] | 'TOP_500'
 }): Promise<Balance[]> {
   try {
     const contract = getContract({ contractAddress: DEPLOYED_CONTRACTS[chain], provider })
-    const balances = await contract.getBalances(address, tokens)
+    const balances = await contract.getBalances(address, tokens === 'TOP_500' ? [] : tokens)
     return formatTokensBalances(balances)
   } catch (error) {
     console.trace(error)
