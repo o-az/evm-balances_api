@@ -49,3 +49,4 @@ artifacts
 .env.*
 !.env.example
 ./typechain-types
+./src/typechain
