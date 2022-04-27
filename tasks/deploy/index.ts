@@ -1,1 +1,1 @@
-import "./mult-coin";
+import "./multicoin";

@@ -1,3 +1,26 @@
 {
-  "solidity.compileUsingRemoteVersion": "0.8.9+commit.e5eed63a"
+  "solidity.compileUsingRemoteVersion": "0.8.9+commit.e5eed63a",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".json",
+      ".md",
+      ".mdx",
+      ".ts",
+      ".tsx"
+    ]
+  },
+  "eslint.validate": [
+    "javascript",
+    "json",
+    "markdown",
+    "mdx",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.packageManager": "yarn"
 }

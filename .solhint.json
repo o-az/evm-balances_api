@@ -8,11 +8,11 @@
     "constructor-syntax": "error",
     "func-visibility": ["error", { "ignoreConstructors": true }],
     "max-line-length": ["error", 120],
-    "quotes": ["error", "single"],
+    "quotes": ["warn", "single"],
     "not-rely-on-time": "off",
     "no-inline-assembly": "off",
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "auto"
       }

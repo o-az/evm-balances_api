@@ -7,25 +7,35 @@
       "ES2018",
       "DOM"
     ],
-    "moduleResolution": "Node",
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "importHelpers": true,
+    "noEmit": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "incremental": true,
+    "skipLibCheck": true,
     "alwaysStrict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "importHelpers": true,
     "noImplicitAny": false,
-    "noImplicitThis": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "Node",
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    //"noPropertyAccessFromIndexSignature": true,
+    "types": [
+      "./src/types/hardhat.d.ts",
+    ],
     "paths": {
-      "~/*": [
-        "src/*"
+      "@/*": [
+        "./src/*"
       ]
     },
   },
@@ -36,8 +46,25 @@
     "node_modules"
   ],
   "include": [
+    "./scripts",
+    "./src",
+    "./test",
+    "./typechain-types",
+    "./tasks",
     "src/**/*",
     "tasks/**/*",
     "test/**/*"
-  ]
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "tsconfig-paths/register"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
 }
