@@ -1,6 +1,6 @@
 {
   "name": "smart-kontrakt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "evm smart contracts",
   "main": "dist/index.js",
   "types": "dist/index.d.js",
