@@ -1,35 +1,17 @@
+import { Contract } from 'ethers'
 import { providers } from 'ethers'
+import { getProvider } from '..'
+
+import { Chain, DEPLOYED_CONTRACTS, ENV_VARIABLES } from '../constants'
+import MULTI_COIN_BALANCE_LOOKUP_ABI from '../data/abi/MultiCoinBalanceLookup.abi.json'
+
+import { formatTokensBalances } from './format'
 
 import type { Balance } from './types'
-import { Chain } from '../constants'
-import { DEPLOYED_CONTRACTS } from '../constants'
-import type { MultiCoinBalanceLookup } from '../typechain'
-import { formatTokenBalance, formatTokensBalances } from './format'
-import { MultiCoinBalanceLookup__factory } from '../typechain/factories/contracts/MultiCoinBalanceLookup.sol'
 
 type Provider = providers.Provider
 
-export async function getTokenBalance({
-  address,
-  token,
-  chain,
-  provider,
-}: {
-  address: string
-  chain: Chain
-  provider: Provider
-  token: string
-}): Promise<Balance> {
-  try {
-    const contract = getContract({ contractAddress: DEPLOYED_CONTRACTS[chain], provider })
-    const result = await contract.getBalance(address, token)
-    return formatTokenBalance(result)
-  } catch (error) {
-    console.trace(error)
-    throw new Error(`Error getting token balance for ${address} on ${chain}`)
-  }
-}
-
+// TODO: support passing a default list of tokens
 export async function getTokensBalances({
   address,
   tokens,
@@ -39,24 +21,37 @@ export async function getTokensBalances({
   address: string
   chain: Chain
   provider: Provider
-  tokens: string[] | 'TOP_500'
+  tokens: string[]
 }): Promise<Balance[]> {
+  if (!DEPLOYED_CONTRACTS[chain]) throw new Error(`Chain ${chain} not supported yet`)
   try {
-    const contract = getContract({ contractAddress: DEPLOYED_CONTRACTS[chain], provider })
-    const balances = await contract.getBalances(address, tokens === 'TOP_500' ? [] : tokens)
-    return formatTokensBalances(balances)
+    const contract = getContract({
+      contractAddress: DEPLOYED_CONTRACTS[chain],
+      provider,
+    })
+    const balances = await contract.getBalances(address, tokens)
+    console.log(balances)
+    const formatted = await formatTokensBalances({
+      balances,
+      contractAddresses: tokens,
+      chain,
+    })
+    return formatted as Balance[]
   } catch (error) {
     console.trace(error)
     throw new Error(`Could not get balances for ${address} on chain ${chain}`)
   }
 }
 
-function getContract({
-  contractAddress,
-  provider,
-}: {
-  contractAddress: string
-  provider: Provider
-}): MultiCoinBalanceLookup {
-  return MultiCoinBalanceLookup__factory.connect(contractAddress, provider)
+function getContract({ contractAddress, provider }: { contractAddress: string; provider: Provider }) {
+  return new Contract(contractAddress, MULTI_COIN_BALANCE_LOOKUP_ABI, provider)
 }
+
+// import POLYGON_CONTRACTS from '@/data/tokens/polygon-contracts.json'
+
+// getTokensBalances({
+//   provider: getProvider({ chain: 'polygon-mainnet', key: ENV_VARIABLES.INFURA_KEY }),
+//   tokens: POLYGON_CONTRACTS,
+//   address: '0x52a258ed593c793251a89bfd36cae158ee9fc4f8',
+//   chain: 'polygon-mainnet',
+// })

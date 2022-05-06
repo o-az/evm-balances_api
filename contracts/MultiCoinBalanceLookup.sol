@@ -3,14 +3,6 @@ pragma solidity ^0.8.9;
 
 abstract contract Token {
   function balanceOf(address) public view virtual returns (uint256);
-
-  function name() public view virtual returns (string memory);
-
-  function symbol() public view virtual returns (string memory);
-
-  function decimals() public view virtual returns (uint256);
-
-  function totalSupply() public view virtual returns (uint256);
 }
 
 contract MultiCoinBalanceLookup {
@@ -22,45 +14,28 @@ contract MultiCoinBalanceLookup {
     revert('MultiCoinBalanceLookup is not payable');
   }
 
-  struct Balance {
-    address contractAddress;
-    uint256 balance;
-    string name;
-    string symbol;
-    uint256 decimals;
-  }
-
   // Multiple coins balance lookup
-  function getBalances(address user, address[] calldata tokens) public view returns (Balance[] memory balances) {
-    balances = new Balance[](tokens.length);
+  function getBalances(address user, address[] calldata tokens) public view returns (uint256[] memory) {
+    uint256[] memory balances = new uint256[](tokens.length);
     for (uint256 idx = 0; idx < tokens.length; idx++) {
-      if (!isContract({ contractAddress: tokens[idx] })) continue;
-      balances[idx] = getBalance({ user: user, token: tokens[idx] });
+      if (!isContract({ contractAddress: tokens[idx], user: user })) continue;
+      if (tokens[idx] == address(0x0)) {
+        balances[idx] = user.balance;
+      } else {
+        balances[idx] = Token(tokens[idx]).balanceOf(user);
+      }
     }
     return balances;
   }
 
-  // Single coin balance lookup
-  function getBalance(address user, address token) public view returns (Balance memory balance) {
-    if (token != address(0x0)) {
-      return
-        Balance({
-          contractAddress: token,
-          balance: Token(token).balanceOf(user),
-          name: Token(token).name(),
-          symbol: Token(token).symbol(),
-          decimals: Token(token).decimals()
-        });
-    }
-    return Balance({ contractAddress: token, balance: user.balance, name: 'Ether', symbol: 'ETH', decimals: 18 });
-  }
-
   /* Private functions */
-  function isContract(address contractAddress) internal view returns (bool) {
+  function isContract(address contractAddress, address user) internal view returns (bool) {
+    // check if contract implements balanceOf function
+    (bool success, ) = contractAddress.staticcall(abi.encodeWithSelector(0x70a08231, user));
     uint256 codeSize;
     assembly {
       codeSize := extcodesize(contractAddress)
     }
-    return codeSize > 0;
+    return codeSize > 0 && success;
   }
 }

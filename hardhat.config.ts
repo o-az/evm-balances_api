@@ -12,27 +12,6 @@ import { resolve } from 'path'
 import { config as dotenvConfig } from 'dotenv'
 dotenvConfig({ path: resolve(__dirname, './.env') })
 
-type Mode = 'development' | 'production'
-const mode: Mode = 'development'
-
-const envVariables = () => {
-  return mode === 'development'
-    ? {
-        PRIVATE_KEY: process.env.PRIVATE_KEY,
-        API_KEY: process.env.ROPSTEN_ALCHEMY_KEY,
-        URL: `https://eth-ropsten.alchemyapi.io/v2/${process.env.ROPSTEN_ALCHEMY_KEY}`,
-        reportGas: true,
-      }
-    : mode === 'production'
-    ? {
-        PRIVATE_KEY: process.env.PRIVATE_KEY,
-        API_KEY: process.env.ALCHEMY_KEY,
-        URL: '',
-        reportGas: true,
-      }
-    : {}
-}
-
 const mnemonic: string | undefined = process.env.MNEMONIC
 if (!mnemonic) {
   throw new Error('Please set your MNEMONIC in a .env file')
@@ -49,6 +28,7 @@ const chainIds = {
   'polygon-mumbai': 80001,
   rinkeby: 4,
   ropsten: 3,
+  bsctestnet: 97,
 }
 
 function getChainConfig(chain: keyof typeof chainIds): NetworkUserConfig {
@@ -60,16 +40,18 @@ function getChainConfig(chain: keyof typeof chainIds): NetworkUserConfig {
     case 'bsc':
       jsonRpcUrl = 'https://bsc-dataseed1.binance.org'
       break
+    case 'bsctestnet':
+      jsonRpcUrl = 'https://data-seed-prebsc-2-s3.binance.org:8545/'
+      break
+    case 'polygon-mainnet':
+    case 'polygon-mumbai':
+      jsonRpcUrl = `https://${chain}.g.alchemy.com/v2/${process.env.ALCHEMY_KEY}`
+      break
     default:
-      jsonRpcUrl = `https://eth-${chain}.alchemyapi.io/v2/${envVariables().API_KEY}`
+      jsonRpcUrl = `https://${chain}.infura.io/v3/${process.env.INFURA_KEY}`
   }
   return {
     accounts: [`${process.env.PRIVATE_KEY}`],
-    //  {
-    //   count: 10,
-    //   mnemonic,
-    //   path: "m/44'/60'/0'/0",
-    // },
     chainId: chainIds[chain],
     url: jsonRpcUrl,
   }
@@ -88,7 +70,14 @@ const config: HardhatUserConfig = {
     },
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_KEY,
+    apiKey: {
+      mainnet: process.env.ETHERSCAN_KEY,
+      ropsten: process.env.ETHERSCAN_KEY,
+      rinkeby: process.env.ETHERSCAN_KEY,
+      bscTestnet: process.env.BSCSCAN_KEY,
+      polygon: process.env.POLYGON_ETHERSCAN_KEY,
+      polygonMumbai: process.env.POLYGON_ETHERSCAN_KEY,
+    },
   },
   networks: {
     hardhat: {
@@ -106,9 +95,7 @@ const config: HardhatUserConfig = {
     'polygon-mumbai': getChainConfig('polygon-mumbai'),
     rinkeby: getChainConfig('rinkeby'),
     ropsten: getChainConfig('ropsten'),
-    // {
-    //   accounts: ['df57089febbacf7ba0bc227dafbffa9fc08a93fdc68e1e42411a14efcf23656e'],
-    // },
+    bsctestnet: getChainConfig('bsctestnet'),
   },
   paths: {
     artifacts: './artifacts',
@@ -116,13 +103,9 @@ const config: HardhatUserConfig = {
     tests: './tests',
     sources: './contracts',
   },
-  typechain: {
-    target: 'ethers-v5',
-    outDir: './src/typechain',
-  },
   gasReporter: {
     currency: 'USD',
-    enabled: envVariables().reportGas,
+    enabled: Boolean(process.env.REPORT_GAS),
     excludeContracts: [],
     src: './contracts',
   },

@@ -7,7 +7,6 @@
   "eslint.options": {
     "extensions": [
       ".js",
-      ".json",
       ".md",
       ".mdx",
       ".ts",
@@ -16,11 +15,16 @@
   },
   "eslint.validate": [
     "javascript",
-    "json",
     "markdown",
     "mdx",
     "typescript",
     "typescriptreact"
   ],
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+  "yaml.schemas": {
+    "openapi:v3": [
+      "file:///Users/omaraziz/repos/evm-balances/apps/proxy/openapi.v0.1.yml",
+      "file:///Users/omaraziz/repos/evm-balances/apps/proxy/open-api/openapi.yaml"
+    ]
+  }
 }

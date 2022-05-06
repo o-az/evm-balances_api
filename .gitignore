@@ -48,5 +48,7 @@ artifacts
 .t
 .env.*
 !.env.example
-./typechain-types
-./src/typechain
+src/typechain/
+.yarn
+.yarnrc.yml
+typechain

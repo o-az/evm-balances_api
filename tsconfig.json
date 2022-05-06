@@ -1,70 +1,51 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "ES2018",
-    "module": "CommonJS",
     "lib": [
       "ES2018",
       "DOM"
     ],
-    "strict": true,
-    "noEmit": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "incremental": true,
-    "skipLibCheck": true,
-    "alwaysStrict": true,
-    "importHelpers": true,
-    "noImplicitAny": false,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
+    "target": "ES2018",
+    "module": "CommonJS",
     "esModuleInterop": true,
-    "isolatedModules": true,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "noImplicitReturns": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "Node",
-    "noUncheckedIndexedAccess": true,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    //"noPropertyAccessFromIndexSignature": true,
-    "types": [
-      "./src/types/hardhat.d.ts",
-    ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
-  },
-  "files": [
-    "./hardhat.config.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "./scripts",
-    "./src",
-    "./test",
-    "./typechain-types",
-    "./tasks",
-    "src/**/*",
-    "tasks/**/*",
-    "test/**/*"
-  ],
-  "ts-node": {
-    "transpileOnly": true,
-    "require": [
-      "tsconfig-paths/register"
-    ],
+    "outDir": "dist",
     "baseUrl": ".",
+    "resolveJsonModule": true,
+    "types": [
+      "node",
+      "./typechain-types/hardhat.d.ts"
+    ],
     "paths": {
       "@/*": [
         "./src/*"
       ]
     }
+  },
+  "files": [
+    "./typechain-types/hardhat.d.ts",
+    "./hardhat.config.ts",
+    "./environment.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "typechain-types",
+    "src",
+    "scripts",
+    "tasks",
+    "test"
+  ],
+  "ts-node": {
+    "swc": true,
+    "esm": true,
+    "transpileOnly": true,
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
+  "paths": {
+    "@/*": [
+      "./src/*"
+    ]
   }
 }
