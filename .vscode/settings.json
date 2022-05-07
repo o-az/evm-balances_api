@@ -10,7 +10,8 @@
       ".md",
       ".mdx",
       ".ts",
-      ".tsx"
+      ".tsx",
+      ".json",
     ]
   },
   "eslint.validate": [
@@ -18,7 +19,8 @@
     "markdown",
     "mdx",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "json",
   ],
   "eslint.packageManager": "yarn",
   "yaml.schemas": {

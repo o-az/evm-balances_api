@@ -2,12 +2,12 @@ import { Contract } from 'ethers'
 import { providers } from 'ethers'
 import { getProvider } from '..'
 
-import { Chain, DEPLOYED_CONTRACTS, ENV_VARIABLES } from '../constants'
+import { DEPLOYED_CONTRACTS } from '@/constants'
 import MULTI_COIN_BALANCE_LOOKUP_ABI from '../data/abi/MultiCoinBalanceLookup.abi.json'
 
 import { formatTokensBalances } from './format'
 
-import type { Balance } from './types'
+import type { Balance,Chain } from '@/types'
 
 type Provider = providers.Provider
 

@@ -1,8 +1,7 @@
 import { utils } from "ethers";
 import type { BigNumber } from "ethers";
 
-import type { Balance } from "./types";
-import type { Chain } from "../constants";
+import type { Balance,Chain } from "@/types";
 
 type FormatResponse = Balance | null;
 type Token = Record<string, { symbol: string; name: string; decimals: number }>;
@@ -16,7 +15,7 @@ export async function formatTokensBalances({
   contractAddresses: string[];
   chain: Chain;
 }): Promise<FormatResponse[]> {
-  let _chain = chain.includes("-") ? chain.split("-")[0] : chain;
+  const _chain = chain.includes("-") ? chain.split("-")[0] : chain;
   const { default: tokenList } = (await import(
     `../data/tokens/${_chain}.json`
   )) as Token;
@@ -29,7 +28,7 @@ export async function formatTokensBalances({
       const { decimals, symbol, name } = token;
       return {
         balance: utils.formatUnits(balance, decimals),
-        contractAddress: contractAddresses[i],
+        address: contractAddresses[i],
         symbol,
         name,
         decimals,

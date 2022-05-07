@@ -6,13 +6,13 @@
     ],
     "target": "ES2018",
     "module": "CommonJS",
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "outDir": "dist",
     "baseUrl": ".",
     "resolveJsonModule": true,
     "types": [
       "node",
-      "./typechain-types/hardhat.d.ts"
     ],
     "paths": {
       "@/*": [
