@@ -1045,7 +1045,7 @@
     lru-cache "^5.1.1"
     semaphore-async-await "^1.5.1"
 
-"@ethereumjs/common@^2.3.0", "@ethereumjs/common@^2.4.0", "@ethereumjs/common@^2.5.0", "@ethereumjs/common@^2.6.0", "@ethereumjs/common@^2.6.3", "@ethereumjs/common@^2.6.4":
+"@ethereumjs/common@^2.4.0", "@ethereumjs/common@^2.5.0", "@ethereumjs/common@^2.6.0", "@ethereumjs/common@^2.6.3", "@ethereumjs/common@^2.6.4":
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/@ethereumjs/common/-/common-2.6.4.tgz#1b3cdd3aa4ee3b0ca366756fc35e4a03022a01cc"
   integrity sha512-RDJh/R/EAr+B7ZRg5LfJ0BIpf/1LydFgYdvZEuTraojCbVypO2sQ+QnpP5u2wJf9DASyooKqu8O4FJEWUV6NXw==
@@ -1064,7 +1064,7 @@
     ethereumjs-util "^7.1.1"
     miller-rabin "^4.0.0"
 
-"@ethereumjs/tx@^3.2.1", "@ethereumjs/tx@^3.3.0", "@ethereumjs/tx@^3.3.2", "@ethereumjs/tx@^3.4.0", "@ethereumjs/tx@^3.5.1":
+"@ethereumjs/tx@^3.3.0", "@ethereumjs/tx@^3.3.2", "@ethereumjs/tx@^3.4.0", "@ethereumjs/tx@^3.5.1":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@ethereumjs/tx/-/tx-3.5.1.tgz#8d941b83a602b4a89949c879615f7ea9a90e6671"
   integrity sha512-xzDrTiu4sqZXUcaBxJ4n4W5FrppwxLxZB4ZDGVLtxSQR4lVuOnFR6RcUHdg1mpUhAPVrmnzLJpxaeXnPxIyhWA==
@@ -1135,6 +1135,21 @@
     "@ethersproject/properties" "^5.6.0"
     "@ethersproject/strings" "^5.6.0"
 
+"@ethersproject/abi@^5.0.9":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abi/-/abi-5.7.0.tgz#b3f3e045bbbeed1af3947335c247ad625a44e449"
+  integrity sha512-351ktp42TiRcYB3H1OP8yajPeAQstMW/yCFokj/AthP9bLHzQFPlOrxOcwYEDkUAICmOHljvN4K39OMTMUa9RA==
+  dependencies:
+    "@ethersproject/address" "^5.7.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/constants" "^5.7.0"
+    "@ethersproject/hash" "^5.7.0"
+    "@ethersproject/keccak256" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    "@ethersproject/strings" "^5.7.0"
+
 "@ethersproject/abstract-provider@5.6.0", "@ethersproject/abstract-provider@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/abstract-provider/-/abstract-provider-5.6.0.tgz#0c4ac7054650dbd9c476cf5907f588bbb6ef3061"
@@ -1148,6 +1163,19 @@
     "@ethersproject/transactions" "^5.6.0"
     "@ethersproject/web" "^5.6.0"
 
+"@ethersproject/abstract-provider@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abstract-provider/-/abstract-provider-5.7.0.tgz#b0a8550f88b6bf9d51f90e4795d48294630cb9ef"
+  integrity sha512-R41c9UkchKCpAqStMYUpdunjo3pkEvZC3FAwZn5S5MGbXoMQOHIdHItezTETxAO5bevtMApSyEhn9+CHcDsWBw==
+  dependencies:
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/networks" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    "@ethersproject/transactions" "^5.7.0"
+    "@ethersproject/web" "^5.7.0"
+
 "@ethersproject/abstract-signer@5.6.0", "@ethersproject/abstract-signer@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/abstract-signer/-/abstract-signer-5.6.0.tgz#9cd7ae9211c2b123a3b29bf47aab17d4d016e3e7"
@@ -1158,6 +1186,17 @@
     "@ethersproject/bytes" "^5.6.0"
     "@ethersproject/logger" "^5.6.0"
     "@ethersproject/properties" "^5.6.0"
+
+"@ethersproject/abstract-signer@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abstract-signer/-/abstract-signer-5.7.0.tgz#13f4f32117868452191a4649723cb086d2b596b2"
+  integrity sha512-a16V8bq1/Cz+TGCkE2OPMTOUDLS3grCpdjoJCYNnVBbdYEMSgKrU0+B90s8b6H+ByYTBZN7a3g76jdIJi7UfKQ==
+  dependencies:
+    "@ethersproject/abstract-provider" "^5.7.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
 
 "@ethersproject/address@5.6.0", "@ethersproject/address@>=5.0.0-beta.128", "@ethersproject/address@^5.0.2", "@ethersproject/address@^5.0.4", "@ethersproject/address@^5.6.0":
   version "5.6.0"
@@ -1170,12 +1209,30 @@
     "@ethersproject/logger" "^5.6.0"
     "@ethersproject/rlp" "^5.6.0"
 
+"@ethersproject/address@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/address/-/address-5.7.0.tgz#19b56c4d74a3b0a46bfdbb6cfcc0a153fc697f37"
+  integrity sha512-9wYhYt7aghVGo758POM5nqcOMaE168Q6aRLJZwUmiqSrAungkG74gSSeKEIR7ukixesdRZGPgVqme6vmxs1fkA==
+  dependencies:
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/keccak256" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/rlp" "^5.7.0"
+
 "@ethersproject/base64@5.6.0", "@ethersproject/base64@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/base64/-/base64-5.6.0.tgz#a12c4da2a6fb86d88563216b0282308fc15907c9"
   integrity sha512-2Neq8wxJ9xHxCF9TUgmKeSh9BXJ6OAxWfeGWvbauPh8FuHEjamgHilllx8KkSd5ErxyHIX7Xv3Fkcud2kY9ezw==
   dependencies:
     "@ethersproject/bytes" "^5.6.0"
+
+"@ethersproject/base64@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/base64/-/base64-5.7.0.tgz#ac4ee92aa36c1628173e221d0d01f53692059e1c"
+  integrity sha512-Dr8tcHt2mEbsZr/mwTPIQAf3Ai0Bks/7gTw9dSqk1mQvhW3XvRlmDJr/4n+wg1JmCl16NZue17CDh8xb/vZ0sQ==
+  dependencies:
+    "@ethersproject/bytes" "^5.7.0"
 
 "@ethersproject/basex@5.6.0", "@ethersproject/basex@^5.6.0":
   version "5.6.0"
@@ -1194,6 +1251,15 @@
     "@ethersproject/logger" "^5.6.0"
     bn.js "^4.11.9"
 
+"@ethersproject/bignumber@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/bignumber/-/bignumber-5.7.0.tgz#e2f03837f268ba655ffba03a57853e18a18dc9c2"
+  integrity sha512-n1CAdIHRWjSucQO3MC1zPSVgV/6dy/fjL9pMrPP9peL+QxEg9wOsVqwD4+818B6LUEtaXzVHQiuivzRoxPxUGw==
+  dependencies:
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    bn.js "^5.2.1"
+
 "@ethersproject/bytes@5.6.1", "@ethersproject/bytes@>=5.0.0-beta.129", "@ethersproject/bytes@^5.0.4", "@ethersproject/bytes@^5.6.0", "@ethersproject/bytes@^5.6.1":
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/@ethersproject/bytes/-/bytes-5.6.1.tgz#24f916e411f82a8a60412344bf4a813b917eefe7"
@@ -1201,12 +1267,26 @@
   dependencies:
     "@ethersproject/logger" "^5.6.0"
 
+"@ethersproject/bytes@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/bytes/-/bytes-5.7.0.tgz#a00f6ea8d7e7534d6d87f47188af1148d71f155d"
+  integrity sha512-nsbxwgFXWh9NyYWo+U8atvmMsSdKJprTcICAkvbBffT75qDocbuggBU0SJiVK2MuTrp0q+xvLkTnGMPK1+uA9A==
+  dependencies:
+    "@ethersproject/logger" "^5.7.0"
+
 "@ethersproject/constants@5.6.0", "@ethersproject/constants@>=5.0.0-beta.128", "@ethersproject/constants@^5.0.4", "@ethersproject/constants@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/constants/-/constants-5.6.0.tgz#55e3eb0918584d3acc0688e9958b0cedef297088"
   integrity sha512-SrdaJx2bK0WQl23nSpV/b1aq293Lh0sUaZT/yYKPDKn4tlAbkH96SPJwIhwSwTsoQQZxuh1jnqsKwyymoiBdWA==
   dependencies:
     "@ethersproject/bignumber" "^5.6.0"
+
+"@ethersproject/constants@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/constants/-/constants-5.7.0.tgz#df80a9705a7e08984161f09014ea012d1c75295e"
+  integrity sha512-DHI+y5dBNvkpYUMiRQyxRBYBefZkJfo70VUkUAsRjcPs47muV9evftfZ0PJVCXYbAiCgght0DtcF9srFQmIgWA==
+  dependencies:
+    "@ethersproject/bignumber" "^5.7.0"
 
 "@ethersproject/contracts@5.6.0", "@ethersproject/contracts@^5.6.0":
   version "5.6.0"
@@ -1237,6 +1317,21 @@
     "@ethersproject/logger" "^5.6.0"
     "@ethersproject/properties" "^5.6.0"
     "@ethersproject/strings" "^5.6.0"
+
+"@ethersproject/hash@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/hash/-/hash-5.7.0.tgz#eb7aca84a588508369562e16e514b539ba5240a7"
+  integrity sha512-qX5WrQfnah1EFnO5zJv1v46a8HW0+E5xuBBDTwMFZLuVTx0tbU2kkx15NqdjxecrLGatQN9FGQKpb1FKdHCt+g==
+  dependencies:
+    "@ethersproject/abstract-signer" "^5.7.0"
+    "@ethersproject/address" "^5.7.0"
+    "@ethersproject/base64" "^5.7.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/keccak256" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    "@ethersproject/strings" "^5.7.0"
 
 "@ethersproject/hdnode@5.6.0", "@ethersproject/hdnode@^5.6.0":
   version "5.6.0"
@@ -1283,10 +1378,23 @@
     "@ethersproject/bytes" "^5.6.0"
     js-sha3 "0.8.0"
 
+"@ethersproject/keccak256@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/keccak256/-/keccak256-5.7.0.tgz#3186350c6e1cd6aba7940384ec7d6d9db01f335a"
+  integrity sha512-2UcPboeL/iW+pSg6vZ6ydF8tCnv3Iu/8tUmLLzWWGzxWKFFqOBQFLo6uLUv6BDrLgCDfN28RJ/wtByx+jZ4KBg==
+  dependencies:
+    "@ethersproject/bytes" "^5.7.0"
+    js-sha3 "0.8.0"
+
 "@ethersproject/logger@5.6.0", "@ethersproject/logger@>=5.0.0-beta.129", "@ethersproject/logger@^5.0.5", "@ethersproject/logger@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/logger/-/logger-5.6.0.tgz#d7db1bfcc22fd2e4ab574cba0bb6ad779a9a3e7a"
   integrity sha512-BiBWllUROH9w+P21RzoxJKzqoqpkyM1pRnEKG69bulE9TSQD8SAIvTQqIMZmmCO8pUNkgLP1wndX1gKghSpBmg==
+
+"@ethersproject/logger@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/logger/-/logger-5.7.0.tgz#6ce9ae168e74fecf287be17062b590852c311892"
+  integrity sha512-0odtFdXu/XHtjQXJYA3u9G0G8btm0ND5Cu8M7i5vhEcE8/HmF4Lbdqanwyv4uQTr2tx6b7fQRmgLrsnpQlmnig==
 
 "@ethersproject/networks@5.6.2", "@ethersproject/networks@^5.6.0":
   version "5.6.2"
@@ -1294,6 +1402,13 @@
   integrity sha512-9uEzaJY7j5wpYGTojGp8U89mSsgQLc40PCMJLMCnFXTs7nhBveZ0t7dbqWUNrepWTszDbFkYD6WlL8DKx5huHA==
   dependencies:
     "@ethersproject/logger" "^5.6.0"
+
+"@ethersproject/networks@^5.7.0":
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/@ethersproject/networks/-/networks-5.7.1.tgz#118e1a981d757d45ccea6bb58d9fd3d9db14ead6"
+  integrity sha512-n/MufjFYv3yFcUyfhnXotyDlNdFb7onmkSy8aQERi2PjNcnWQ66xXxa3XlS8nCcA8aJKJjIIMNJTC7tu80GwpQ==
+  dependencies:
+    "@ethersproject/logger" "^5.7.0"
 
 "@ethersproject/pbkdf2@5.6.0", "@ethersproject/pbkdf2@^5.6.0":
   version "5.6.0"
@@ -1309,6 +1424,13 @@
   integrity sha512-szoOkHskajKePTJSZ46uHUWWkbv7TzP2ypdEK6jGMqJaEt2sb0jCgfBo0gH0m2HBpRixMuJ6TBRaQCF7a9DoCg==
   dependencies:
     "@ethersproject/logger" "^5.6.0"
+
+"@ethersproject/properties@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/properties/-/properties-5.7.0.tgz#a6e12cb0439b878aaf470f1902a176033067ed30"
+  integrity sha512-J87jy8suntrAkIZtecpxEPxY//szqr1mlBaYlQ0r4RCaiD2hjheqF9s1LVE8vVuJCXisjIP+JgtK/Do54ej4Sw==
+  dependencies:
+    "@ethersproject/logger" "^5.7.0"
 
 "@ethersproject/providers@5.6.5", "@ethersproject/providers@^5.1.3":
   version "5.6.5"
@@ -1351,6 +1473,14 @@
     "@ethersproject/bytes" "^5.6.0"
     "@ethersproject/logger" "^5.6.0"
 
+"@ethersproject/rlp@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/rlp/-/rlp-5.7.0.tgz#de39e4d5918b9d74d46de93af80b7685a9c21304"
+  integrity sha512-rBxzX2vK8mVF7b0Tol44t5Tb8gomOHkj5guL+HhzQ1yBh/ydjGnpw6at+X6Iw0Kp3OzzzkcKp8N9r0W4kYSs9w==
+  dependencies:
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+
 "@ethersproject/sha2@5.6.0", "@ethersproject/sha2@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/sha2/-/sha2-5.6.0.tgz#364c4c11cc753bda36f31f001628706ebadb64d9"
@@ -1369,6 +1499,18 @@
     "@ethersproject/logger" "^5.6.0"
     "@ethersproject/properties" "^5.6.0"
     bn.js "^4.11.9"
+    elliptic "6.5.4"
+    hash.js "1.1.7"
+
+"@ethersproject/signing-key@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/signing-key/-/signing-key-5.7.0.tgz#06b2df39411b00bc57c7c09b01d1e41cf1b16ab3"
+  integrity sha512-MZdy2nL3wO0u7gkB4nA/pEf8lu1TlFswPNmy8AiYkfKTdO6eXBJyUdmHO/ehm/htHw9K/qF8ujnTyUAD+Ry54Q==
+  dependencies:
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    bn.js "^5.2.1"
     elliptic "6.5.4"
     hash.js "1.1.7"
 
@@ -1393,6 +1535,15 @@
     "@ethersproject/constants" "^5.6.0"
     "@ethersproject/logger" "^5.6.0"
 
+"@ethersproject/strings@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/strings/-/strings-5.7.0.tgz#54c9d2a7c57ae8f1205c88a9d3a56471e14d5ed2"
+  integrity sha512-/9nu+lj0YswRNSH0NXYqrh8775XNyEdUQAuf3f+SmOrnVewcJ5SBNAjF7lpgehKi4abvNNXyf+HX86czCdJ8Mg==
+  dependencies:
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/constants" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+
 "@ethersproject/transactions@5.6.0", "@ethersproject/transactions@^5.0.0-beta.135", "@ethersproject/transactions@^5.6.0":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/transactions/-/transactions-5.6.0.tgz#4b594d73a868ef6e1529a2f8f94a785e6791ae4e"
@@ -1407,6 +1558,21 @@
     "@ethersproject/properties" "^5.6.0"
     "@ethersproject/rlp" "^5.6.0"
     "@ethersproject/signing-key" "^5.6.0"
+
+"@ethersproject/transactions@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/transactions/-/transactions-5.7.0.tgz#91318fc24063e057885a6af13fdb703e1f993d3b"
+  integrity sha512-kmcNicCp1lp8qanMTC3RIikGgoJ80ztTyvtsFvCYpSCfkjhD0jZ2LOrnbcuxuToLIUYYf+4XwD1rP+B/erDIhQ==
+  dependencies:
+    "@ethersproject/address" "^5.7.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/constants" "^5.7.0"
+    "@ethersproject/keccak256" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    "@ethersproject/rlp" "^5.7.0"
+    "@ethersproject/signing-key" "^5.7.0"
 
 "@ethersproject/units@5.6.0":
   version "5.6.0"
@@ -1448,6 +1614,17 @@
     "@ethersproject/logger" "^5.6.0"
     "@ethersproject/properties" "^5.6.0"
     "@ethersproject/strings" "^5.6.0"
+
+"@ethersproject/web@^5.7.0":
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/@ethersproject/web/-/web-5.7.1.tgz#de1f285b373149bee5928f4eb7bcb87ee5fbb4ae"
+  integrity sha512-Gueu8lSvyjBWL4cYsWsjh6MtMwM0+H4HvqFPZfB6dV8ctbP9zFAO73VG1cMWae0FLPCtz0peKPpZY8/ugJJX2w==
+  dependencies:
+    "@ethersproject/base64" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/logger" "^5.7.0"
+    "@ethersproject/properties" "^5.7.0"
+    "@ethersproject/strings" "^5.7.0"
 
 "@ethersproject/wordlists@5.6.0", "@ethersproject/wordlists@^5.6.0":
   version "5.6.0"
@@ -2273,11 +2450,6 @@
   resolved "https://registry.yarnpkg.com/@truffle/error/-/error-0.0.6.tgz#75d499845b4b3a40537889e7d04c663afcaee85d"
   integrity sha512-QUM9ZWiwlXGixFGpV18g5I6vua6/r+ZV9W/5DQA5go9A3eZUNPHPaTKMIQPJLYn6+ZV5jg5H28zCHq56LHF3yA==
 
-"@truffle/error@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@truffle/error/-/error-0.1.0.tgz#5e9fed79e6cda624c926d314b280a576f8b22a36"
-  integrity sha512-RbUfp5VreNhsa2Q4YbBjz18rOQI909pG32bghl1hulO7IpvcqTS+C3Ge5cNbiWQ1WGzy1wIeKLW0tmQtHFB7qg==
-
 "@truffle/hdwallet-provider@^2.0.6":
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/@truffle/hdwallet-provider/-/hdwallet-provider-2.0.8.tgz#4f2edde26b36356ac8dfe993ed4dece415005be8"
@@ -2291,24 +2463,6 @@
     ethereumjs-util "^6.1.0"
     ethereumjs-wallet "^1.0.1"
     web3-provider-engine "16.0.3"
-
-"@truffle/interface-adapter@^0.5.16":
-  version "0.5.16"
-  resolved "https://registry.yarnpkg.com/@truffle/interface-adapter/-/interface-adapter-0.5.16.tgz#ff53a215e0c6bf7e47ef53dd13298bcb836b15fa"
-  integrity sha512-4L8/TtFSe9eW4KWeXAvi3RrD0rImbLeYB4axPLOCAitUEDCTB/iJjZ1cMkC85LbO9mwz5/AjP0i37YO10rging==
-  dependencies:
-    bn.js "^5.1.3"
-    ethers "^4.0.32"
-    web3 "1.5.3"
-
-"@truffle/provider@^0.2.24":
-  version "0.2.54"
-  resolved "https://registry.yarnpkg.com/@truffle/provider/-/provider-0.2.54.tgz#e34180eb3292be68ffdb8adaf7ae1c6b6611d482"
-  integrity sha512-BW2bb6p7dAipUCHlRDMSswFqessXkIb8tHVRVkm6KAENIor0F4UCCPlxIzrM/ShRQ1O16jZ+0cxLMwiRWTWdLg==
-  dependencies:
-    "@truffle/error" "^0.1.0"
-    "@truffle/interface-adapter" "^0.5.16"
-    web3 "1.5.3"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.8"
@@ -3762,10 +3916,15 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.10.0, bn.js@^4.11.0, bn.js@^4.11.6, bn.js@^
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.12.0.tgz#775b3f278efbb9718eec7361f483fb36fbbfea88"
   integrity sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==
 
-bn.js@^5.0.0, bn.js@^5.1.1, bn.js@^5.1.2, bn.js@^5.1.3, bn.js@^5.2.0:
+bn.js@^5.0.0, bn.js@^5.1.1, bn.js@^5.1.2, bn.js@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.2.0.tgz#358860674396c6997771a9d051fcc1b57d4ae002"
   integrity sha512-D7iWRBvnZE8ecXiLj/9wbxH7Tk79fAh8IHaTNq1RWRixsS02W+5qS+iE9yq6RYl0asXx5tw0bLhmT5pIfbSquw==
+
+bn.js@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.2.1.tgz#0bc527a6a0d18d0aa8d5b0538ce4a77dccfa7b70"
+  integrity sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==
 
 body-parser@1.20.0, body-parser@^1.16.0:
   version "1.20.0"
@@ -5008,6 +5167,13 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+difflib@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/difflib/-/difflib-0.2.4.tgz#b5e30361a6db023176d562892db85940a718f47e"
+  integrity sha512-9YVwmMb0wQHQNr5J9m6BSj6fk4pfGITGQOOs+D9Fl+INODWFOfvhIU1hNv6GgR1RBoC/9NJcwu77zShxV0kT7w==
+  dependencies:
+    heap ">= 0.2.0"
 
 dir-glob@^3.0.1:
   version "3.0.1"
@@ -7251,6 +7417,11 @@ heap@0.2.6:
   resolved "https://registry.yarnpkg.com/heap/-/heap-0.2.6.tgz#087e1f10b046932fc8594dd9e6d378afc9d1e5ac"
   integrity sha1-CH4fELBGky/IWU3Z5tN4r8nR5aw=
 
+"heap@>= 0.2.0":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/heap/-/heap-0.2.7.tgz#1e6adf711d3f27ce35a81fe3b7bd576c2260a8fc"
+  integrity sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==
+
 hmac-drbg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -8831,6 +9002,36 @@ mnemonist@^0.38.0:
   integrity sha512-bZTFT5rrPKtPJxj8KSV0WkPyNxl72vQepqqVUAW2ARUpUSF2qXMB6jZj7hW5/k7C1rtpzqbD/IIbJwLXUjCHeg==
   dependencies:
     obliterator "^2.0.0"
+
+mocha@7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-7.1.2.tgz#8e40d198acf91a52ace122cd7599c9ab857b29e6"
+  integrity sha512-o96kdRKMKI3E8U0bjnfqW4QMk12MwZ4mhdBTf+B5a1q9+aq2HRnj+3ZdJu0B/ZhJeK78MgYuv6L8d/rA5AeBJA==
+  dependencies:
+    ansi-colors "3.2.3"
+    browser-stdout "1.3.1"
+    chokidar "3.3.0"
+    debug "3.2.6"
+    diff "3.5.0"
+    escape-string-regexp "1.0.5"
+    find-up "3.0.0"
+    glob "7.1.3"
+    growl "1.10.5"
+    he "1.2.0"
+    js-yaml "3.13.1"
+    log-symbols "3.0.0"
+    minimatch "3.0.4"
+    mkdirp "0.5.5"
+    ms "2.1.1"
+    node-environment-flags "1.0.6"
+    object.assign "4.1.0"
+    strip-json-comments "2.0.1"
+    supports-color "6.0.0"
+    which "1.3.1"
+    wide-align "1.1.3"
+    yargs "13.3.2"
+    yargs-parser "13.1.2"
+    yargs-unparser "1.6.0"
 
 mocha@^7.1.1:
   version "7.2.0"
@@ -10820,29 +11021,31 @@ solidity-comments-extractor@^0.0.7:
   resolved "https://registry.yarnpkg.com/solidity-comments-extractor/-/solidity-comments-extractor-0.0.7.tgz#99d8f1361438f84019795d928b931f4e5c39ca19"
   integrity sha512-wciNMLg/Irp8OKGrh3S2tfvZiZ0NEyILfcRCXCD4mp7SgK/i9gzLfhY2hY7VMCQJ3kH9UB9BzNdibIVMchzyYw==
 
-solidity-coverage@^0.7.20:
-  version "0.7.21"
-  resolved "https://registry.yarnpkg.com/solidity-coverage/-/solidity-coverage-0.7.21.tgz#20c5615a3a543086b243c2ca36e2951a75316b40"
-  integrity sha512-O8nuzJ9yXiKUx3NdzVvHrUW0DxoNVcGzq/I7NzewNO9EZE3wYAQ4l8BwcnV64r4aC/HB6Vnw/q2sF0BQHv/3fg==
+solidity-coverage@^0.8.0:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/solidity-coverage/-/solidity-coverage-0.8.2.tgz#bc39604ab7ce0a3fa7767b126b44191830c07813"
+  integrity sha512-cv2bWb7lOXPE9/SSleDO6czkFiMHgP4NXPj+iW9W7iEKLBk7Cj0AGBiNmGX3V1totl9wjPrT0gHmABZKZt65rQ==
   dependencies:
-    "@solidity-parser/parser" "^0.14.0"
-    "@truffle/provider" "^0.2.24"
+    "@ethersproject/abi" "^5.0.9"
+    "@solidity-parser/parser" "^0.14.1"
     chalk "^2.4.2"
     death "^1.1.0"
     detect-port "^1.3.0"
+    difflib "^0.2.4"
     fs-extra "^8.1.0"
     ghost-testrpc "^0.0.2"
     global-modules "^2.0.0"
     globby "^10.0.1"
     jsonschema "^1.2.4"
     lodash "^4.17.15"
+    mocha "7.1.2"
     node-emoji "^1.10.0"
     pify "^4.0.1"
     recursive-readdir "^2.2.2"
     sc-istanbul "^0.4.5"
     semver "^7.3.4"
     shelljs "^0.8.3"
-    web3-utils "^1.3.0"
+    web3-utils "^1.3.6"
 
 source-map-resolve@^0.5.0:
   version "0.5.3"
@@ -12105,15 +12308,6 @@ web3-bzz@1.2.2:
     swarm-js "0.1.39"
     underscore "1.9.1"
 
-web3-bzz@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-bzz/-/web3-bzz-1.5.3.tgz#e36456905ce051138f9c3ce3623cbc73da088c2b"
-  integrity sha512-SlIkAqG0eS6cBS9Q2eBOTI1XFzqh83RqGJWnyrNZMDxUwsTVHL+zNnaPShVPvrWQA1Ub5b0bx1Kc5+qJVxsTJg==
-  dependencies:
-    "@types/node" "^12.12.6"
-    got "9.6.0"
-    swarm-js "^0.1.40"
-
 web3-bzz@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-bzz/-/web3-bzz-1.7.3.tgz#6860a584f748838af5e3932b6798e024ab8ae951"
@@ -12149,14 +12343,6 @@ web3-core-helpers@1.2.2:
     underscore "1.9.1"
     web3-eth-iban "1.2.2"
     web3-utils "1.2.2"
-
-web3-core-helpers@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-core-helpers/-/web3-core-helpers-1.5.3.tgz#099030235c477aadf39a94199ef40092151d563c"
-  integrity sha512-Ip1IjB3S8vN7Kf1PPjK41U5gskmMk6IJQlxIVuS8/1U7n/o0jC8krqtpRwiMfAgYyw3TXwBFtxSRTvJtnLyXZw==
-  dependencies:
-    web3-eth-iban "1.5.3"
-    web3-utils "1.5.3"
 
 web3-core-helpers@1.7.3:
   version "1.7.3"
@@ -12200,18 +12386,6 @@ web3-core-method@1.2.2:
     web3-core-subscriptions "1.2.2"
     web3-utils "1.2.2"
 
-web3-core-method@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-core-method/-/web3-core-method-1.5.3.tgz#6cff97ed19fe4ea2e9183d6f703823a079f5132c"
-  integrity sha512-8wJrwQ2qD9ibWieF9oHXwrJsUGrv3XAtEkNeyvyNMpktNTIjxJ2jaFGQUuLiyUrMubD18XXgLk4JS6PJU4Loeg==
-  dependencies:
-    "@ethereumjs/common" "^2.4.0"
-    "@ethersproject/transactions" "^5.0.0-beta.135"
-    web3-core-helpers "1.5.3"
-    web3-core-promievent "1.5.3"
-    web3-core-subscriptions "1.5.3"
-    web3-utils "1.5.3"
-
 web3-core-method@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-core-method/-/web3-core-method-1.7.3.tgz#eb2a4f140448445c939518c0fa6216b3d265c5e9"
@@ -12245,13 +12419,6 @@ web3-core-promievent@1.2.2:
   dependencies:
     any-promise "1.3.0"
     eventemitter3 "3.1.2"
-
-web3-core-promievent@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-core-promievent/-/web3-core-promievent-1.5.3.tgz#3f11833c3dc6495577c274350b61144e0a4dba01"
-  integrity sha512-CFfgqvk3Vk6PIAxtLLuX+pOMozxkKCY+/GdGr7weMh033mDXEPvwyVjoSRO1PqIKj668/hMGQsVoIgbyxkJ9Mg==
-  dependencies:
-    eventemitter3 "4.0.4"
 
 web3-core-promievent@1.7.3:
   version "1.7.3"
@@ -12293,17 +12460,6 @@ web3-core-requestmanager@1.2.2:
     web3-providers-ipc "1.2.2"
     web3-providers-ws "1.2.2"
 
-web3-core-requestmanager@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-core-requestmanager/-/web3-core-requestmanager-1.5.3.tgz#b339525815fd40e3a2a81813c864ddc413f7b6f7"
-  integrity sha512-9k/Bze2rs8ONix5IZR+hYdMNQv+ark2Ek2kVcrFgWO+LdLgZui/rn8FikPunjE+ub7x7pJaKCgVRbYFXjo3ZWg==
-  dependencies:
-    util "^0.12.0"
-    web3-core-helpers "1.5.3"
-    web3-providers-http "1.5.3"
-    web3-providers-ipc "1.5.3"
-    web3-providers-ws "1.5.3"
-
 web3-core-requestmanager@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-core-requestmanager/-/web3-core-requestmanager-1.7.3.tgz#226f79d16e546c9157d00908de215e984cae84e9"
@@ -12341,14 +12497,6 @@ web3-core-subscriptions@1.2.2:
     eventemitter3 "3.1.2"
     underscore "1.9.1"
     web3-core-helpers "1.2.2"
-
-web3-core-subscriptions@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-core-subscriptions/-/web3-core-subscriptions-1.5.3.tgz#d7d69c4caad65074212028656e9dc56ca5c2159d"
-  integrity sha512-L2m9vG1iRN6thvmv/HQwO2YLhOQlmZU8dpLG6GSo9FBN14Uch868Swk0dYVr3rFSYjZ/GETevSXU+O+vhCummA==
-  dependencies:
-    eventemitter3 "4.0.4"
-    web3-core-helpers "1.5.3"
 
 web3-core-subscriptions@1.7.3:
   version "1.7.3"
@@ -12393,19 +12541,6 @@ web3-core@1.2.2:
     web3-core-requestmanager "1.2.2"
     web3-utils "1.2.2"
 
-web3-core@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-core/-/web3-core-1.5.3.tgz#59f8728b27c8305b349051326aa262b9b7e907bf"
-  integrity sha512-ACTbu8COCu+0eUNmd9pG7Q9EVsNkAg2w3Y7SqhDr+zjTgbSHZV01jXKlapm9z+G3AN/BziV3zGwudClJ4u4xXQ==
-  dependencies:
-    "@types/bn.js" "^4.11.5"
-    "@types/node" "^12.12.6"
-    bignumber.js "^9.0.0"
-    web3-core-helpers "1.5.3"
-    web3-core-method "1.5.3"
-    web3-core-requestmanager "1.5.3"
-    web3-utils "1.5.3"
-
 web3-core@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-core/-/web3-core-1.7.3.tgz#2ef25c4cc023997f43af9f31a03b571729ff3cda"
@@ -12445,14 +12580,6 @@ web3-eth-abi@1.2.2:
     ethers "4.0.0-beta.3"
     underscore "1.9.1"
     web3-utils "1.2.2"
-
-web3-eth-abi@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-eth-abi/-/web3-eth-abi-1.5.3.tgz#5aea9394d797f99ca0d9bd40c3417eb07241c96c"
-  integrity sha512-i/qhuFsoNrnV130CSRYX/z4SlCfSQ4mHntti5yTmmQpt70xZKYZ57BsU0R29ueSQ9/P+aQrL2t2rqkQkAloUxg==
-  dependencies:
-    "@ethersproject/abi" "5.0.7"
-    web3-utils "1.5.3"
 
 web3-eth-abi@1.7.3:
   version "1.7.3"
@@ -12513,23 +12640,6 @@ web3-eth-accounts@1.2.2:
     web3-core-helpers "1.2.2"
     web3-core-method "1.2.2"
     web3-utils "1.2.2"
-
-web3-eth-accounts@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-eth-accounts/-/web3-eth-accounts-1.5.3.tgz#076c816ff4d68c9dffebdc7fd2bfaddcfc163d77"
-  integrity sha512-pdGhXgeBaEJENMvRT6W9cmji3Zz/46ugFSvmnLLw79qi5EH7XJhKISNVb41eWCrs4am5GhI67GLx5d2s2a72iw==
-  dependencies:
-    "@ethereumjs/common" "^2.3.0"
-    "@ethereumjs/tx" "^3.2.1"
-    crypto-browserify "3.12.0"
-    eth-lib "0.2.8"
-    ethereumjs-util "^7.0.10"
-    scrypt-js "^3.0.1"
-    uuid "3.3.2"
-    web3-core "1.5.3"
-    web3-core-helpers "1.5.3"
-    web3-core-method "1.5.3"
-    web3-utils "1.5.3"
 
 web3-eth-accounts@1.7.3:
   version "1.7.3"
@@ -12592,20 +12702,6 @@ web3-eth-contract@1.2.2:
     web3-eth-abi "1.2.2"
     web3-utils "1.2.2"
 
-web3-eth-contract@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-eth-contract/-/web3-eth-contract-1.5.3.tgz#12b03a4a16ce583a945f874bea2ff2fb4c5b81ad"
-  integrity sha512-Gdlt1L6cdHe83k7SdV6xhqCytVtOZkjD0kY/15x441AuuJ4JLubCHuqu69k2Dr3tWifHYVys/vG8QE/W16syGg==
-  dependencies:
-    "@types/bn.js" "^4.11.5"
-    web3-core "1.5.3"
-    web3-core-helpers "1.5.3"
-    web3-core-method "1.5.3"
-    web3-core-promievent "1.5.3"
-    web3-core-subscriptions "1.5.3"
-    web3-eth-abi "1.5.3"
-    web3-utils "1.5.3"
-
 web3-eth-contract@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-eth-contract/-/web3-eth-contract-1.7.3.tgz#c4efc118ed7adafbc1270b633f33e696a39c7fc7"
@@ -12663,20 +12759,6 @@ web3-eth-ens@1.2.2:
     web3-eth-contract "1.2.2"
     web3-utils "1.2.2"
 
-web3-eth-ens@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-eth-ens/-/web3-eth-ens-1.5.3.tgz#ef6eee1ddf32b1ff9536fc7c599a74f2656bafe1"
-  integrity sha512-QmGFFtTGElg0E+3xfCIFhiUF+1imFi9eg/cdsRMUZU4F1+MZCC/ee+IAelYLfNTGsEslCqfAusliKOT9DdGGnw==
-  dependencies:
-    content-hash "^2.5.2"
-    eth-ens-namehash "2.0.8"
-    web3-core "1.5.3"
-    web3-core-helpers "1.5.3"
-    web3-core-promievent "1.5.3"
-    web3-eth-abi "1.5.3"
-    web3-eth-contract "1.5.3"
-    web3-utils "1.5.3"
-
 web3-eth-ens@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-eth-ens/-/web3-eth-ens-1.7.3.tgz#ebc56a4dc7007f4f899259bbae1237d3095e2f3f"
@@ -12714,14 +12796,6 @@ web3-eth-iban@1.2.2:
   dependencies:
     bn.js "4.11.8"
     web3-utils "1.2.2"
-
-web3-eth-iban@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-eth-iban/-/web3-eth-iban-1.5.3.tgz#91b1475893a877b10eac1de5cce6eb379fb81b5d"
-  integrity sha512-vMzmGqolYZvRHwP9P4Nf6G8uYM5aTLlQu2a34vz78p0KlDC+eV1th3+90Qeaupa28EG7OO0IT1F0BejiIauOPw==
-  dependencies:
-    bn.js "^4.11.9"
-    web3-utils "1.5.3"
 
 web3-eth-iban@1.7.3:
   version "1.7.3"
@@ -12765,18 +12839,6 @@ web3-eth-personal@1.2.2:
     web3-core-method "1.2.2"
     web3-net "1.2.2"
     web3-utils "1.2.2"
-
-web3-eth-personal@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-eth-personal/-/web3-eth-personal-1.5.3.tgz#4ebe09e9a77dd49d23d93b36b36cfbf4a6dae713"
-  integrity sha512-JzibJafR7ak/Icas8uvos3BmUNrZw1vShuNR5Cxjo+vteOC8XMqz1Vr7RH65B4bmlfb3bm9xLxetUHO894+Sew==
-  dependencies:
-    "@types/node" "^12.12.6"
-    web3-core "1.5.3"
-    web3-core-helpers "1.5.3"
-    web3-core-method "1.5.3"
-    web3-net "1.5.3"
-    web3-utils "1.5.3"
 
 web3-eth-personal@1.7.3:
   version "1.7.3"
@@ -12847,24 +12909,6 @@ web3-eth@1.2.2:
     web3-net "1.2.2"
     web3-utils "1.2.2"
 
-web3-eth@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-eth/-/web3-eth-1.5.3.tgz#d7d1ac7198f816ab8a2088c01e0bf1eda45862fe"
-  integrity sha512-saFurA1L23Bd7MEf7cBli6/jRdMhD4X/NaMiO2mdMMCXlPujoudlIJf+VWpRWJpsbDFdu7XJ2WHkmBYT5R3p1Q==
-  dependencies:
-    web3-core "1.5.3"
-    web3-core-helpers "1.5.3"
-    web3-core-method "1.5.3"
-    web3-core-subscriptions "1.5.3"
-    web3-eth-abi "1.5.3"
-    web3-eth-accounts "1.5.3"
-    web3-eth-contract "1.5.3"
-    web3-eth-ens "1.5.3"
-    web3-eth-iban "1.5.3"
-    web3-eth-personal "1.5.3"
-    web3-net "1.5.3"
-    web3-utils "1.5.3"
-
 web3-eth@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-eth/-/web3-eth-1.7.3.tgz#9e92785ea18d682548b6044551abe7f2918fc0b5"
@@ -12909,15 +12953,6 @@ web3-net@1.2.2:
     web3-core "1.2.2"
     web3-core-method "1.2.2"
     web3-utils "1.2.2"
-
-web3-net@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-net/-/web3-net-1.5.3.tgz#545fee49b8e213b0c55cbe74ffd0295766057463"
-  integrity sha512-0W/xHIPvgVXPSdLu0iZYnpcrgNnhzHMC888uMlGP5+qMCt8VuflUZHy7tYXae9Mzsg1kxaJAS5lHVNyeNw4CoQ==
-  dependencies:
-    web3-core "1.5.3"
-    web3-core-method "1.5.3"
-    web3-utils "1.5.3"
 
 web3-net@1.7.3:
   version "1.7.3"
@@ -13006,14 +13041,6 @@ web3-providers-http@1.2.2:
     web3-core-helpers "1.2.2"
     xhr2-cookies "1.1.0"
 
-web3-providers-http@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-providers-http/-/web3-providers-http-1.5.3.tgz#74f170fc3d79eb7941d9fbc34e2a067d61ced0b2"
-  integrity sha512-5DpUyWGHtDAr2RYmBu34Fu+4gJuBAuNx2POeiJIooUtJ+Mu6pIx4XkONWH6V+Ez87tZAVAsFOkJRTYuzMr3rPw==
-  dependencies:
-    web3-core-helpers "1.5.3"
-    xhr2-cookies "1.1.0"
-
 web3-providers-http@1.7.3:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-providers-http/-/web3-providers-http-1.7.3.tgz#8ea5e39f6ceee0b5bc4e45403fae75cad8ff4cf7"
@@ -13048,14 +13075,6 @@ web3-providers-ipc@1.2.2:
     oboe "2.1.4"
     underscore "1.9.1"
     web3-core-helpers "1.2.2"
-
-web3-providers-ipc@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-providers-ipc/-/web3-providers-ipc-1.5.3.tgz#4bd7f5e445c2f3c2595fce0929c72bb879320a3f"
-  integrity sha512-JmeAptugVpmXI39LGxUSAymx0NOFdgpuI1hGQfIhbEAcd4sv7fhfd5D+ZU4oLHbRI8IFr4qfGU0uhR8BXhDzlg==
-  dependencies:
-    oboe "2.1.5"
-    web3-core-helpers "1.5.3"
 
 web3-providers-ipc@1.7.3:
   version "1.7.3"
@@ -13092,15 +13111,6 @@ web3-providers-ws@1.2.2:
     underscore "1.9.1"
     web3-core-helpers "1.2.2"
     websocket "github:web3-js/WebSocket-Node#polyfill/globalThis"
-
-web3-providers-ws@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-providers-ws/-/web3-providers-ws-1.5.3.tgz#eec6cfb32bb928a4106de506f13a49070a21eabf"
-  integrity sha512-6DhTw4Q7nm5CFYEUHOJM0gAb3xFx+9gWpVveg3YxJ/ybR1BUvEWo3bLgIJJtX56cYX0WyY6DS35a7f0LOI1kVg==
-  dependencies:
-    eventemitter3 "4.0.4"
-    web3-core-helpers "1.5.3"
-    websocket "^1.0.32"
 
 web3-providers-ws@1.7.3:
   version "1.7.3"
@@ -13140,16 +13150,6 @@ web3-shh@1.2.2:
     web3-core-method "1.2.2"
     web3-core-subscriptions "1.2.2"
     web3-net "1.2.2"
-
-web3-shh@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-shh/-/web3-shh-1.5.3.tgz#3c04aa4cda9ba0b746d7225262401160f8e38b13"
-  integrity sha512-COfEXfsqoV/BkcsNLRxQqnWc1Teb8/9GxdGag5GtPC5gQC/vsN+7hYVJUwNxY9LtJPKYTij2DHHnx6UkITng+Q==
-  dependencies:
-    web3-core "1.5.3"
-    web3-core-method "1.5.3"
-    web3-core-subscriptions "1.5.3"
-    web3-net "1.5.3"
 
 web3-shh@1.7.3:
   version "1.7.3"
@@ -13202,25 +13202,25 @@ web3-utils@1.2.2:
     underscore "1.9.1"
     utf8 "3.0.0"
 
-web3-utils@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3-utils/-/web3-utils-1.5.3.tgz#e914c9320cd663b2a09a5cb920ede574043eb437"
-  integrity sha512-56nRgA+Ad9SEyCv39g36rTcr5fpsd4L9LgV3FK0aB66nAMazLAA6Qz4lH5XrUKPDyBIPGJIR+kJsyRtwcu2q1Q==
-  dependencies:
-    bn.js "^4.11.9"
-    eth-lib "0.2.8"
-    ethereum-bloom-filters "^1.0.6"
-    ethjs-unit "0.1.6"
-    number-to-bn "1.7.0"
-    randombytes "^2.1.0"
-    utf8 "3.0.0"
-
-web3-utils@1.7.3, web3-utils@^1.0.0-beta.31, web3-utils@^1.3.0:
+web3-utils@1.7.3, web3-utils@^1.0.0-beta.31:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/web3-utils/-/web3-utils-1.7.3.tgz#b214d05f124530d8694ad364509ac454d05f207c"
   integrity sha512-g6nQgvb/bUpVUIxJE+ezVN+rYwYmlFyMvMIRSuqpi1dk6ApDD00YNArrk7sPcZnjvxOJ76813Xs2vIN2rgh4lg==
   dependencies:
     bn.js "^4.11.9"
+    ethereum-bloom-filters "^1.0.6"
+    ethereumjs-util "^7.1.0"
+    ethjs-unit "0.1.6"
+    number-to-bn "1.7.0"
+    randombytes "^2.1.0"
+    utf8 "3.0.0"
+
+web3-utils@^1.3.6:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/web3-utils/-/web3-utils-1.8.1.tgz#f2f7ca7eb65e6feb9f3d61056d0de6bbd57125ff"
+  integrity sha512-LgnM9p6V7rHHUGfpMZod+NST8cRfGzJ1BTXAyNo7A9cJX9LczBfSRxJp+U/GInYe9mby40t3v22AJdlELibnsQ==
+  dependencies:
+    bn.js "^5.2.1"
     ethereum-bloom-filters "^1.0.6"
     ethereumjs-util "^7.1.0"
     ethjs-unit "0.1.6"
@@ -13267,19 +13267,6 @@ web3@1.2.2:
     web3-net "1.2.2"
     web3-shh "1.2.2"
     web3-utils "1.2.2"
-
-web3@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/web3/-/web3-1.5.3.tgz#11882679453c645bf33620fbc255a243343075aa"
-  integrity sha512-eyBg/1K44flfv0hPjXfKvNwcUfIVDI4NX48qHQe6wd7C8nPSdbWqo9vLy6ksZIt9NLa90HjI8HsGYgnMSUxn6w==
-  dependencies:
-    web3-bzz "1.5.3"
-    web3-core "1.5.3"
-    web3-eth "1.5.3"
-    web3-eth-personal "1.5.3"
-    web3-net "1.5.3"
-    web3-shh "1.5.3"
-    web3-utils "1.5.3"
 
 web3@^1.2.4:
   version "1.7.3"
