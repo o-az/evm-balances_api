@@ -1,15 +1,12 @@
 declare namespace NodeJS {
-  export interface ProcessEnv {
-    ROPSTEN_ALCHEMY_KEY: string;
-    PRIVATE_KEY: string;
-    REPORT_GAS: string;
-    MNEMONIC: string;
-    ETHERSCAN_KEY: string;
-    ALCHEMY_KEY: string;
-    TESTNET_WALLET_ADDR: string;
-    POLYGON_ETHERSCAN_KEY: string;
-    INFURA_KEY: string;
-    POLYGON_ALCHEMY_KEY: string;
-    BSCSCAN_KEY: string;
-  }
+	interface ProcessEnv {
+		NODE_ENV: 'development' | 'production' | 'test'
+		CI: string
+		DEPLOYED_CONTRACT: string
+		RPC_URL: string
+		KEY: string
+		ETHERSCAN_API_KEY: string
+		POLYGONSCAN_API_KEY: string
+		OPTIMISTIC_ETHSCAN_API_KEY: string
+	}
 }

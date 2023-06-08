@@ -1,37 +1,50 @@
-```ts
-export const CONTRACTS = {
-  ethereum: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  optimism: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  arbitrum: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  opera: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  bsc: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  avalanche: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  avalancheTest: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  bsctestnet: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  ropsten: '0x1207602eBE2d77801081d57162577cbEf1414D78',
-  rinkeby: '0x7B1DB2CfCdd3DBd38d3700310CA3c76e94799081',
-  polygon: '0xE052Ef907f09c0053B237647aD7387D4BDF11A5A',
-  polygonTestnet: '0xE052Ef907f09c0053B237647aD7387D4BDF11A5A',
-  hardhat: '0xE3395e0d3AD7A0d86eFEb56fa7F1E69513e951bD',
-}
-```
-___
+# <h1 align="center"> Multicoin Balances Smart Contract </h1>
 
-```ts
-// TODO: expose an npm package to be used like this:
-export async function getBalances({
-  address,
-  network,
-  tokenContracts,
-  infuraKey,
-  alchemyKey,
-}: {
-  address: string
-  network: Chain
-  tokenContracts: Array<string>
-  infuraKey?: string
-  alchemyKey?: string
-}) {
-  // ...
+This is like `balanceOf` but for multiple coins. It takes 2 inputs, a wallet address and an array of coin addresses. It returns an array of balances for each coin. The first element of the array is the wallet balance of the native coin of the chain.
+
+For usage example, see the [./example/balances.ts](./example/balances.ts).
+
+## Deployed Contracts
+
+| Network | Address |
+| --- | --- |
+| Ethereum | [0x13675852Ac733AEd5679985778BE5c18E64E97FA](https://etherscan.io/address/0x13675852Ac733AEd5679985778BE5c18E64E97FA#code)
+| Arbitrum | [0x77e883446e4cDE8955b4ce07DfCf0E9887B0e66c](https://arbiscan.io/address/0x77e883446e4cDE8955b4ce07DfCf0E9887B0e66c#code)
+| Optimism | [0xc9ba77c9b27481b6789840a7c3128d4f691f8296](https://optimistic.etherscan.io/address/0xc9ba77c9b27481b6789840a7c3128d4f691f8296#code)
+| Polygon | [0x8b08FE6F8443f7bBbEde50Ecc8B020d9e44997a2](https://polygonscan.com/address/0x8b08FE6F8443f7bBbEde50Ecc8B020d9e44997a2#code)
+| Celo | [0x5D88da6682B9088B9e31c900Be850de20cF20B11](https://celoscan.io/address/0x5d88da6682b9088b9e31c900be850de20cf20b11#code)
+| Gnosis | [0x5D88da6682B9088B9e31c900Be850de20cF20B11](https://gnosisscan.io/address/0x5d88da6682b9088b9e31c900be850de20cf20b11#code)
+| Harmony One | [0xc9bA77C9b27481B6789840A7C3128D4f691f8296](https://explorer.harmony.one/address/0xc9ba77c9b27481b6789840a7c3128d4f691f8296#code)
+| Moonbeam | [0x5D88da6682B9088B9e31c900Be850de20cF20B11](https://moonbeam-explorer.netlify.app/address/0x5d88da6682b9088b9e31c900be850de20cf20b11#code)
+| Avalanche | -
+| Fantom | -
+| Goerli | [0x694be3BCecAf1dD69ba91D21c54E22C87882a595](https://goerli.etherscan.io/address/0x694be3BCecAf1dD69ba91D21c54E22C87882a595#code)
+| Sepolia | [0x5D88da6682B9088B9e31c900Be850de20cF20B11](https://sepolia.etherscan.io/address/0x5D88da6682B9088B9e31c900Be850de20cF20B11#code)
+| Polygon Mumbai | [0x5D88da6682B9088B9e31c900Be850de20cF20B11](https://mumbai.polygonscan.com/address/0x5D88da6682B9088B9e31c900Be850de20cF20B11#code)
+| Optimism Goerli | [0x5D88da6682B9088B9e31c900Be850de20cF20B11](https://goerli-optimism.etherscan.io/address/0x5d88da6682b9088b9e31c900be850de20cf20b11#code)
+| Arbitrum Goerli | [0xc9bA77C9b27481B6789840A7C3128D4f691f8296](https://goerli.arbiscan.io/address/0xc9ba77c9b27481b6789840a7c3128d4f691f8296#code)
+| Fantom Testnet | [0xc9bA77C9b27481B6789840A7C3128D4f691f8296](https://testnet.ftmscan.com/address/0xc9ba77c9b27481b6789840a7c3128d4f691f8296#code)
+| Base Goerli | [0x4a54047B53C5B011b00AcBdec84c090e6Cc175E2](https://goerli.basescan.org/address/0x4a54047b53c5b011b00acbdec84c090e6cc175e2#code)
+
+```jsonc
+{
+  "ethereum": "0x13675852Ac733AEd5679985778BE5c18E64E97FA",
+  "arbitrum": "0x77e883446e4cDE8955b4ce07DfCf0E9887B0e66c",
+  "optimism": "0xc9bA77C9b27481B6789840A7C3128D4f691f8296",
+  "polygon": "0x8b08FE6F8443f7bBbEde50Ecc8B020d9e44997a2",
+  "celo": "0x5D88da6682B9088B9e31c900Be850de20cF20B11",
+  "gnosis": "0x5D88da6682B9088B9e31c900Be850de20cF20B11",
+  "harmonyOne": "0xc9bA77C9b27481B6789840A7C3128D4f691f8296",
+  "moonbeam": "0x5D88da6682B9088B9e31c900Be850de20cF20B11",
+  "avalanche": "",
+  "fantom": "",
+  "goerli": "0x694be3BCecAf1dD69ba91D21c54E22C87882a595",
+  "sepolia": "0x5D88da6682B9088B9e31c900Be850de20cF20B11",
+  "polygonMumbai": "0x5D88da6682B9088B9e31c900Be850de20cF20B11",
+  "optimismGoerli": "0x5D88da6682B9088B9e31c900Be850de20cF20B11",
+  "arbitrumGoerli": "0xc9bA77C9b27481B6789840A7C3128D4f691f8296",
+  "fantomTestnet": "0xc9bA77C9b27481B6789840A7C3128D4f691f8296",
+  "avalancheFuji": "0xc9bA77C9b27481B6789840A7C3128D4f691f8296",
+  "baseGoerli": "0x4a54047B53C5B011b00AcBdec84c090e6Cc175E2"
 }
 ```
